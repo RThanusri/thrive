@@ -132,7 +132,7 @@ $t=0;$p1=0;
 
 <body style="margin-top:10% !important;">
 <section class="info3 cid-smHa3xqxC6 mbr-parallax-background" id="info3-r" style="margin-top:30px; ">
-<div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(200 13 125);">
+<div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(200 13 125);">
     </div>
     <div class="container">
         <div class="row justify-content-center">
