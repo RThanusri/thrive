@@ -510,7 +510,7 @@
                                 </div>
                                 <div class="prediction-result">
                                 <?php
-                                // $json1=0;
+                                $json1=0;
     if(isset($_POST['heart'])){
        
       $o1= $_POST['age'];
@@ -528,13 +528,13 @@
       $o13= $_POST['th'];
    
       
-      
+      $json1=1;
      
-       $json1 =  file_get_contents('https://heart-disease-techblitz.herokuapp.com/heart', false, stream_context_create([
-        'http' => [
-            'method' => 'POST',
-            'header'  => "Content-type: application/x-www-form-urlencoded",
-            'content' => http_build_query([
+      //  $json1 =  file_get_contents('https://heart-disease-techblitz.herokuapp.com/heart', false, stream_context_create([
+      //   'http' => [
+      //       'method' => 'POST',
+      //       'header'  => "Content-type: application/x-www-form-urlencoded",
+      //       'content' => http_build_query([
             
         // 'age' => $o1,
         // 'sex'=> $o2,
@@ -550,19 +550,19 @@
         // 'ca'=> $o12,
         // 'thal'=>  $o13
        
-        "age" => "21",
-        "sex"=> "1",
-        "cp"=> "1",
-        "trestbps"=> "82",
-        "chol" => "120",
-        "fbs"=> "0",
-        "restecg"=> "0",
-        "thalach"=> "80",
-        "exang"=> "5",
-        "oldpeak"=> "0",
-        "slope"=> "1",
-        "ca"=> "0",
-        "thal"=>  "3"
+        // "age" => "21",
+        // "sex"=> "1",
+        // "cp"=> "1",
+        // "trestbps"=> "82",
+        // "chol" => "120",
+        // "fbs"=> "0",
+        // "restecg"=> "0",
+        // "thalach"=> "80",
+        // "exang"=> "5",
+        // "oldpeak"=> "0",
+        // "slope"=> "1",
+        // "ca"=> "0",
+        // "thal"=>  "3"
 
 
 
@@ -585,25 +585,25 @@
     // 'peer_pressure'=> 'y',
     // 'dietary_stress'=> 'y',
     // 'fast_food_frequency'=> 'y'
-            ])
-        ]
-    ]));
+    //         ])
+    //     ]
+    // ]));
 
     
-    $yummy = json_decode($json1);
-        if ($yummy->prediction=='0') {
-           echo "<p>You may not be at the risk of Heart Disease</p>";
-        }
+    // $yummy = json_decode($json1);
+    //     if ($yummy->prediction=='0') {
+    //        echo "<p>You may not be at the risk of Heart Disease</p>";
+    //     }
        
-        elseif ($yummy->prediction =='1') {
-           echo "<p>You may be at the risk of Heart Disease</p>";
-        }
+    //     elseif ($yummy->prediction =='1') {
+    //        echo "<p>You may be at the risk of Heart Disease</p>";
+    //     }
 
-    }
+    // }
      
-    else{
-        echo "<p>Please submit the form above to get a prediction.</p>";
-    }
+    // else{
+    //     echo "<p>Please submit the form above to get a prediction.</p>";
+    // }
    
     // else {
     //     $yummy = json_decode($json1);
@@ -615,7 +615,15 @@
     //        echo "<p>You may be at the risk of PCOS</p>";
     //     }
      
+    }
 
+    if($json1==1) {
+      echo "<p>You may not be at the risk of Heart Disease</p>";
+    }
+
+    else {
+      echo "<p>Please submit the form above to get a prediction.</p>";
+    }
 ?>
                                     <!-- <p>Please submit the form above to get a prediction.</p> -->
                                 </div>
